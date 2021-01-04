@@ -2,9 +2,8 @@ import { connect } from "../../../utils/db";
 import Joi from "joi";
 import Cors from "cors";
 
-
 const cors = Cors({
-  methods: ["GET", "HEAD","POST"],
+  methods: ["GET", "HEAD", "POST"],
 });
 
 function runMiddleware(req, res, fn) {
@@ -20,7 +19,7 @@ function runMiddleware(req, res, fn) {
 }
 
 export default async function (req, res) {
-  await runMiddleware(req, res, cors)
+  await runMiddleware(req, res, cors);
 
   if (req.method === "POST") {
     try {

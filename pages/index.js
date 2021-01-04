@@ -7,16 +7,20 @@ export default function Home() {
   const [shorturl, setshorturl] = useState("");
 
   const createUrl = async () => {
-    const response = await fetch("https://url-shortener-nextjs-6fvrvvdxt.vercel.app/api/post/url", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        fullurl: fullurl,
-        shorturl: shorturl,
-      }),
-    });
+    const response = await fetch(
+      "https://url-shortener-nextjs-6fvrvvdxt.vercel.app/api/post/url",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+        body: JSON.stringify({
+          fullurl: fullurl,
+          shorturl: shorturl,
+        }),
+      }
+    );
 
     console.log(response);
   };

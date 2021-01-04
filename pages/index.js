@@ -13,8 +13,8 @@ export default function Home() {
         method: "POST",
         headers: {
           "content-type": "application/json",
+          "Access-Control-Allow-Origin": "*"
         },
-        mode:"no-cors",
         body: JSON.stringify({
           fullurl: fullurl,
           shorturl: shorturl,
@@ -22,7 +22,7 @@ export default function Home() {
       }
     );
 
-    console.log(response);
+    console.log(fullurl,shorturl);
   };
   return (
     <div

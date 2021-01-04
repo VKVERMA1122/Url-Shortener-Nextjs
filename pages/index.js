@@ -7,7 +7,7 @@ export default function Home() {
   const [shorturl, setshorturl] = useState("");
 
   const createUrl = async () => {
-    const response = await fetch("http://localhost:3000/api/post/url", {
+    const response = await fetch("https://url-shortener-nextjs-6fvrvvdxt.vercel.app/api/post/url", {
       method: "POST",
       headers: {
         "content-type": "application/json",

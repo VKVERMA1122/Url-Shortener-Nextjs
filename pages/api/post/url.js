@@ -4,7 +4,7 @@ import Cors from "cors";
 
 
 const cors = Cors({
-  methods: ["GET", "HEAD"],
+  methods: ["GET", "HEAD","POST"],
 });
 
 function runMiddleware(req, res, fn) {
@@ -21,7 +21,7 @@ function runMiddleware(req, res, fn) {
 
 export default async function (req, res) {
   await runMiddleware(req, res, cors)
-  
+
   if (req.method === "POST") {
     try {
       const { db } = await connect();
